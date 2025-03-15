@@ -29,6 +29,12 @@ importers:
       '@astrojs/vue':
         specifier: ^5.0.7
         version: 5.0.7(@types/node@22.7.4)(astro@5.5.2(@types/node@22.7.4)(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.9)(typescript@5.6.2)(yaml@2.5.1))(jiti@2.4.2)(lightningcss@1.29.2)(rollup@4.34.9)(vue@3.5.11(typescript@5.6.2))(yaml@2.5.1)
+      '@fontsource-variable/plus-jakarta-sans':
+        specifier: ^5.2.5
+        version: 5.2.5
+      '@fontsource-variable/source-code-pro':
+        specifier: ^5.2.5
+        version: 5.2.5
       '@fontsource/gabarito':
         specifier: ^5.1.0
         version: 5.1.0
@@ -87,6 +93,9 @@ importers:
         specifier: ^3.24.2
         version: 3.24.2
     devDependencies:
+      '@iconify-json/emojione-v1':
+        specifier: ^1.2.1
+        version: 1.2.1
       '@iconify-json/tabler':
         specifier: ^1.2.5
         version: 1.2.5
@@ -624,6 +633,12 @@ packages:
     resolution: {integrity: sha512-3vm4by+B5lvsFPSyep3ELWmZfE3kicDtmemVpuwl1yH7tqtnHdsA6hG8fbXedMVdkzgtvzWoRgjSB4Q+FHnZiw==}
     engines: {node: '>=18.0.0', npm: '>=9.0.0'}
 
+  '@fontsource-variable/plus-jakarta-sans@5.2.5':
+    resolution: {integrity: sha512-nkAWzq+QWBSK+52HIlNCyoh5YXrZ/AwV1OqzxZz6VnPmsIpU68B1bf1YT8heRAJKY1kXNtWIJ9jJMYVaStgf+w==}
+
+  '@fontsource-variable/source-code-pro@5.2.5':
+    resolution: {integrity: sha512-Mi0+uddn7+wE2hytXVG4RN7TJ8aLU6SU/4GVxBRgkaGsI/WQ3ir3uSzbUGBmG7EnEGQkenr21eVmDHdba2RBKA==}
+
   '@fontsource/gabarito@5.1.0':
     resolution: {integrity: sha512-iz0anLrBxYyOjK3gq6pZ1VePhljhtgMALF77J5GjdvhEoNZSEnbExsR43tlLl3ph8ssG/XHsTLvOgftwFboJ5g==}
 
@@ -635,6 +650,9 @@ packages:
 
   '@iarna/toml@2.2.5':
     resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
+
+  '@iconify-json/emojione-v1@1.2.1':
+    resolution: {integrity: sha512-JHOLhXdoevJQoa81m09Ciau/dDw3Gxzok15YKT39ZoaSqmrd8NUMA/rD+T6dCQM/lKXSYc/hb1pZeyiSEXbJFA==}
 
   '@iconify-json/tabler@1.2.5':
     resolution: {integrity: sha512-BDDLgDCbJ2btwi6cPmBL04QyPyNmWy6H13ynUAX48xxpxqUuG+hT+yrqL+RCugFimrvuhcecbSfEKnFc0BW1Ng==}
@@ -4095,6 +4113,10 @@ snapshots:
 
   '@faker-js/faker@9.6.0': {}
 
+  '@fontsource-variable/plus-jakarta-sans@5.2.5': {}
+
+  '@fontsource-variable/source-code-pro@5.2.5': {}
+
   '@fontsource/gabarito@5.1.0': {}
 
   '@headlessui/vue@1.7.23(vue@3.5.11(typescript@5.6.2))':
@@ -4103,6 +4125,10 @@ snapshots:
       vue: 3.5.11(typescript@5.6.2)
 
   '@iarna/toml@2.2.5': {}
+
+  '@iconify-json/emojione-v1@1.2.1':
+    dependencies:
+      '@iconify/types': 2.0.0
 
   '@iconify-json/tabler@1.2.5':
     dependencies:

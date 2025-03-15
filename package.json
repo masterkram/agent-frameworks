@@ -17,6 +17,8 @@
     "@astrojs/mdx": "^4.2.0",
     "@astrojs/sitemap": "^3.2.1",
     "@astrojs/vue": "^5.0.7",
+    "@fontsource-variable/plus-jakarta-sans": "^5.2.5",
+    "@fontsource-variable/source-code-pro": "^5.2.5",
     "@fontsource/gabarito": "^5.1.0",
     "@headlessui/vue": "^1.7.23",
     "@iarna/toml": "^2.2.5",
@@ -38,6 +40,7 @@
     "zod": "^3.24.2"
   },
   "devDependencies": {
+    "@iconify-json/emojione-v1": "^1.2.1",
     "@iconify-json/tabler": "^1.2.5",
     "@tailwindcss/typography": "^0.5.15",
     "astro-icon": "^1.1.1",

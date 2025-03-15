@@ -1,15 +1,15 @@
 [general]
-title = "Cafe Directory"
+title = "Agent Frameworks"
 logo = ""
-iconLogo = "tabler:coffee"
+iconLogo = "emojione-v1:alien-monster"
 
 [general.seo]
-name = "Cafe Directory"
-description = "Find the best nuxt starter kits."
+name = "Agent Frameworks"
+description = "Find the best and newest AI agent frameworks."
 url = "https://nuxtstarters.com"
 
 [directory.data]
-source = "mock"  # default, mock, sheets
+source = "default" # default, mock, sheets
 links = "normal"
 
 # [directory.data.sheets]
@@ -55,26 +55,57 @@ title = "{0} Frameworks"
 
 [[directory.tags]]
 key = "code"
-name = "Code Based"
+name = "Code Based 👩🏼‍💻"
+color = "blue"
+
+[[directory.tags]]
+key = "tool"
+name = "Tool Use Based 🛠️"
 color = "blue"
 
 [[directory.tags]]
 key = "visual"
-name = "Visual Based"
+name = "Visual UI 🎨"
+color = "green"
+
+[[directory.tags]]
+key = "graph"
+name = "Graph ⚙️"
+color = "green"
+
+[[directory.tags]]
+key = "nocode"
+name = "No Code"
+color = "green"
+
+[[directory.tags]]
+key = "mcp"
+name = "MCP"
+color = "green"
+
+[[directory.tags]]
+key = "collaboration"
+name = "Collaboration 🤝🏽"
+color = "green"
+
+[[directory.tags]]
+key = "agnostic"
+name = "Model Agnostic"
+color = "green"
+
+[[directory.tags]]
+key = "memory"
+name = "Memory 🧠"
 color = "green"
 
 [header.banner]
 show = true
-text = "Follow mark_bruderer on twitter."
-link = "https://x.com/intent/follow?screen_name=mark_bruderer"
+text = "Brought to your by Mark."
+link = "https://x.com/intent/follow?screen_name=mark_builds"
 brandText = "AI Agent Libraries"
 
 [header.navbar]
 colorModeSelector = true
-
-[[header.navbar.links]]
-name = "Blog"
-href = "/blog"
 
 [[header.navbar.links]]
 name = "Analytics"
@@ -83,7 +114,7 @@ target = "_blank"
 
 [header.actionButton]
 text = "Submit a starter"
-href = "https://tally.so"
+href = "https://github.com/masterkram/agent-frameworks/pulls"
 
 [footer]
 description = "Best directory for my niche."
