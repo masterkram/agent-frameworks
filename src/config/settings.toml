@@ -107,7 +107,7 @@ color = "green"
 show = true
 text = "Brought to your by Mark."
 link = "https://x.com/intent/follow?screen_name=mark_builds"
-brandText = "AI Agent Libraries"
+brandText = "AI Agent Frameworks"
 
 [header.navbar]
 colorModeSelector = true

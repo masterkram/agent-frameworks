@@ -19,7 +19,11 @@ const linkText = link?.replace(/^https?:\/\//, "");
         <h1 class="font-bold text-4xl">{title}</h1>
         {
           link && (
-            <a class="inline-flex items-center gap-1 font-medium" href={link}>
+            <a
+              class="inline-flex items-center gap-1 font-medium max-w-sm"
+              href={link}
+              target="_blank"
+            >
               {linkText}
               <Icon name="tabler:arrow-up-right" />
             </a>
@@ -34,3 +38,16 @@ const linkText = link?.replace(/^https?:\/\//, "");
     </AppProse>
   </div>
 </BaseLayout>
+
+<style scoped>
+  .prose ul li:before {
+    content: "";
+    background: url("data:image/svg+xml,%3csvg%20width='9'%20height='10'%20viewBox='0%200%209%2010'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M4.37316%200.851288C4.47459%200.59117%204.85275%200.624255%204.90746%200.898033L5.48015%203.76369C5.49882%203.85714%205.56384%203.93463%205.65263%203.96925L8.37531%205.03085C8.63543%205.13228%208.60234%205.51044%208.32856%205.56515L5.4629%206.13784C5.36945%206.15651%205.29197%206.22153%205.25735%206.31032L4.19574%209.033C4.09432%209.29312%203.71616%209.26003%203.66145%208.98625L3.08876%206.12059C3.07008%206.02714%203.00506%205.94966%202.91627%205.91504L0.193598%204.85343C-0.0665204%204.75201%20-0.0334351%204.37385%200.240343%204.31914L3.106%203.74645C3.19945%203.72777%203.27694%203.66275%203.31156%203.57396L4.37316%200.851288Z'%20fill='url(%23paint0_linear_1325_2977)'/%3e%3cdefs%3e%3clinearGradient%20id='paint0_linear_1325_2977'%20x1='9.7012'%20y1='0.396946'%20x2='-0.813864'%20y2='0.0424293'%20gradientUnits='userSpaceOnUse'%3e%3cstop%20stop-color='%23F8E42E'/%3e%3cstop%20offset='1'%20stop-color='%23FF7D54'/%3e%3c/linearGradient%3e%3c/defs%3e%3c/svg%3e")
+      center no-repeat;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    margin-left: -18px;
+  }
+</style>

@@ -1,5 +1,5 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig, envField } from 'astro/config';
 import vue from '@astrojs/vue';
 import mdx from '@astrojs/mdx';
 import icon from 'astro-icon';
@@ -18,5 +18,11 @@ export default defineConfig({
   ],
   vite: {
     plugins: [tailwindcss(), ViteToml()]
+  },
+  env: {
+    schema: {
+      POSTHOG_API_KEY: envField.string({ context: "client", access: "public", optional: true }),
+      POSTHOG_API_HOST: envField.string({ context: "client", access: "public", optional: true }),
+    }
   }
 });
