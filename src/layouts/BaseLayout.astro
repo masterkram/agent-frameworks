@@ -18,14 +18,18 @@ const calculatedTitle = title || siteTitle;
     <meta charset="UTF-8" />
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link
+      rel="icon"
+      type="favicon"
+      href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 64 64'%3E%3C!-- Icon from Emoji One (v1) by Emoji One - https://creativecommons.org/licenses/by-sa/4.0/ --%3E%3Cpath fill='%23242c62' d='M19.694 34.543h4.921v4.921h-4.921zm14.767 0h4.924v4.921h-4.924z'/%3E%3Cpath fill='%23fff' d='M29.539 34.543V29.62h-9.845v4.923h4.922v4.921h4.923zm14.771 4.921V29.62h-9.849v4.923h4.919v4.921z'/%3E%3Cg fill='%2369c9f2'%3E%3Cpath d='M19.694 10h4.921v4.923h-4.921zm19.686 0h4.921v4.923H39.38zM4.923 24.698h4.924v4.922H4.923zM24.616 49.21h4.923v4.921h-4.923zm9.845 0h4.924v4.921h-4.924z'/%3E%3Cpath d='M59.08 49.21v-4.924h-4.923V39.46h-4.922v-4.921h4.922v-4.853h4.923v-4.922h-4.923v4.851h-4.922v-4.922h-4.926v-4.852h-4.921v-4.922h-4.924v4.922h-4.922v-4.922h-4.923v4.922h-4.921v4.853h-4.926v4.922H9.851v4.923h4.921v4.921H9.851v4.826H4.927v4.924H.004v4.921h9.847V49.21h4.921v-4.826h4.926v4.826h4.921v-4.826h14.769v4.826h4.921v-4.826h4.926v4.826h4.922v4.921h9.847V49.21zm-34.46-9.75h-4.921v-9.844h9.844v9.844zm14.769 0h-4.924v-9.844h9.845v9.844z'/%3E%3C/g%3E%3C/svg%3E"
+    />
     <link rel="sitemap" href="/sitemap-index.xml" />
     <meta name="generator" content={Astro.generator} />
     <title>{calculatedTitle}</title>
   </head>
-  <body class="bg-white dark:bg-gray-800">
-    <AppShell>
-      <slot />
-    </AppShell>
-  </body>
 </html>
+<body class="bg-white dark:bg-gray-800">
+  <AppShell>
+    <slot />
+  </AppShell>
+</body>
