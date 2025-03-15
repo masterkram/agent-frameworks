@@ -1,0 +1,30 @@
+---
+import cardConfig from "@util/themeConfig";
+import { Icon } from "astro-icon/components";
+
+const { item } = Astro.props;
+
+const myItem = {
+  ...item,
+  ...item.data,
+};
+
+const href =
+  cardConfig.directory?.data?.links === "outbound" ? myItem.link : myItem.slug;
+
+const image = myItem.card_image || "";
+---
+
+<a href={`/${myItem.slug}`} class="hover:bg-black/5 rounded-md transition-all">
+  <div class="inline-flex gap-2 items-center">
+    {
+      myItem.icon ? (
+        <Icon name={myItem.icon} />
+      ) : (
+        <img class="h-5 w-5" src={image} />
+      )
+    }
+    <span class="font-bold dark:text-gray-50">{myItem.title}</span> -
+    <span class="text-gray-600 dark:text-gray-300">{myItem.description}</span>
+  </div>
+</a>

@@ -1,0 +1,16 @@
+---
+import Prose from "../components/app/Prose.astro";
+import BaseLayout from "./BaseLayout.astro";
+---
+
+<BaseLayout>
+  <div class="bg-gray-100 dark:bg-gray-900 grid grid-cols-10 gap-8 py-10">
+    <div
+      class="max-w-prose col-span-4 col-start-4 2-xl:max-w-6xl px-5 py-10 sm:px-8 sm:shadow bg-white dark:bg-gray-800 ring-1 ring-gray-300 dark:ring-gray-700 sm:rounded-lg"
+    >
+      <Prose>
+        <slot />
+      </Prose>
+    </div>
+  </div>
+</BaseLayout>

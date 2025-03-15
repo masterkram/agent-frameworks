@@ -1,0 +1,19 @@
+---
+import "@fontsource/gabarito";
+import BaseLayout from "./BaseLayout.astro";
+import AppProse from "../components/app/Prose.astro";
+const { frontmatter } = Astro.props;
+import themeConfig from "@util/themeConfig";
+import { Icon } from "astro-icon/components";
+const siteTitle = themeConfig.general.title;
+const title = frontmatter?.title || siteTitle;
+const description = frontmatter?.description;
+---
+
+<BaseLayout>
+  <div class="max-w-2xl w-full mx-auto py-20">
+    <AppProse>
+      <slot />
+    </AppProse>
+  </div>
+</BaseLayout>

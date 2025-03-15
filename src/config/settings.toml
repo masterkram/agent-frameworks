@@ -1,0 +1,113 @@
+[general]
+title = "Cafe Directory"
+logo = ""
+iconLogo = "tabler:coffee"
+
+[general.seo]
+name = "Cafe Directory"
+description = "Find the best nuxt starter kits."
+url = "https://nuxtstarters.com"
+
+[directory.data]
+source = "mock"  # default, mock, sheets
+links = "normal"
+
+# [directory.data.sheets]
+# key = "1BKVVFysQT8ZuPY8hUp--jwTrN-U20TrtML0idECIWmc"
+
+[directory.search]
+placeholder = "Search among {0} agent frameworks"
+showCount = true
+icon = "tabler:bow"
+
+[directory.search.tags]
+display = "show-all" # options: none,select,show-all
+intersection = false
+
+[directory.grid]
+list = false
+type = ""
+
+[directory.grid.emptyState]
+text = "Seems that this entry is missing from the archives."
+type = "button"                                              # options: button, simple, link
+icon = "tabler:exclamation-mark"
+
+[directory.grid.card]
+image = true
+border = "shadow" # options: dashed, shadow, outline
+
+[directory.grid.submit]
+show = true
+first = false
+title = "Submit a template"
+description = "Submit a template to show off a good project to other people."
+hideable = true
+
+[directory.featured]
+showOnAllPages = true
+showOnSide = true
+icon = "tabler:star"
+labelForCard = "Featured ✨"
+
+[directory.tagPages]
+title = "{0} Frameworks"
+
+[[directory.tags]]
+key = "code"
+name = "Code Based"
+color = "blue"
+
+[[directory.tags]]
+key = "visual"
+name = "Visual Based"
+color = "green"
+
+[header.banner]
+show = true
+text = "Follow mark_bruderer on twitter."
+link = "https://x.com/intent/follow?screen_name=mark_bruderer"
+brandText = "AI Agent Libraries"
+
+[header.navbar]
+colorModeSelector = true
+
+[[header.navbar.links]]
+name = "Blog"
+href = "/blog"
+
+[[header.navbar.links]]
+name = "Analytics"
+href = "https://us.posthog.com/shared/vHlGCcSqPjGH4r_QijaXSETtmN9J-g"
+target = "_blank"
+
+[header.actionButton]
+text = "Submit a starter"
+href = "https://tally.so"
+
+[footer]
+description = "Best directory for my niche."
+
+[footer.socials.github]
+link = ""
+icon = "tabler:brand-github"
+
+[footer.socials.facebook]
+link = ""
+icon = "tabler:brand-facebook"
+
+[footer.socials.instagram]
+link = ""
+icon = "tabler:brand-instagram"
+
+[footer.socials.x]
+link = "https://x.com/mark_bruderer"
+icon = "tabler:brand-twitter"
+
+[footer.socials.youtube]
+link = "https://www.youtube.com/@mark_hacks"
+icon = "tabler:brand-youtube"
+
+[ui.icons]
+dark = "tabler:moon"
+light = "tabler:sun"

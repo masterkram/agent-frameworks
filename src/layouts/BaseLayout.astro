@@ -1,0 +1,30 @@
+---
+import "@fontsource/gabarito";
+import AppShell from "../components/app/AppShell.astro";
+import themeConfig from "@util/themeConfig";
+import "../styles/global.css";
+
+const { slug } = Astro.params;
+const { title } = Astro.props;
+const siteTitle = themeConfig.general.title;
+
+const calculatedTitle = title || siteTitle;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{calculatedTitle}</title>
+  </head>
+  <body class="bg-white dark:bg-gray-800">
+    <AppShell>
+      <slot />
+    </AppShell>
+  </body>
+</html>

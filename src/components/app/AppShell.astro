@@ -1,0 +1,14 @@
+---
+import Posthog from "../analytics/Posthog.astro";
+import Footer from "./Footer.astro";
+import Navbar from "./Navbar.astro";
+import Banner from "./header/Banner.astro";
+---
+
+<div>
+  <Banner />
+  <Navbar />
+  <slot />
+  <Footer />
+  <Posthog />
+</div>

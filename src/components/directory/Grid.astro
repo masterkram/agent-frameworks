@@ -1,0 +1,52 @@
+---
+import { getListings } from "../../lib/getListings";
+import PureGrid from "./PureGrid.astro";
+
+const allListings = (await getListings()).sort(
+  (a, b) => Number(b.data.featured) - Number(a.data.featured),
+);
+---
+
+<PureGrid id="directory-grid" listings={allListings} />
+
+<script>
+  import { search, tags } from "../../store.js";
+
+  // Define the filtering function
+  function filterListings() {
+    const listingsArray = document.querySelectorAll(".listing");
+    const currentSearch = search.get().trim().toLowerCase();
+    const selectedTags = tags.get();
+    const selectedTagsSet: Set<string> = new Set(selectedTags); // For efficient lookup
+
+    for (const element of listingsArray) {
+      // Get content for search filtering
+      const content = (
+        (element.querySelector(".card-title")?.textContent || "") +
+        (element.querySelector(".card-description")?.textContent || "")
+      ).toLowerCase();
+
+      // Get tags from data attribute
+      if (element instanceof HTMLElement) {
+        const elementTags = element.dataset.tags?.split(",") || [];
+
+        // Determine if the listing matches
+        const matchesSearch = content.includes(currentSearch); // Empty search matches all
+        const matchesTags =
+          selectedTags.length === 0 ||
+          elementTags.some((tag: string) => selectedTagsSet.has(tag.trim()));
+
+        // Show or hide the listing
+        if (matchesSearch && matchesTags) {
+          element.classList.remove("hidden");
+        } else {
+          element.classList.add("hidden");
+        }
+      }
+    }
+  }
+
+  // Subscribe to both stores, triggering filtering on any change
+  search.subscribe(() => filterListings());
+  tags.subscribe(() => filterListings());
+</script>

@@ -1,0 +1,46 @@
+{
+  "name": "mintedastro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@ascorbic/airtable-loader": "^1.0.5",
+    "@ascorbic/csv-loader": "^2.0.3",
+    "@ascorbic/mock-loader": "^2.0.2",
+    "@astrojs/check": "^0.9.4",
+    "@astrojs/mdx": "^4.2.0",
+    "@astrojs/sitemap": "^3.2.1",
+    "@astrojs/vue": "^5.0.7",
+    "@fontsource/gabarito": "^5.1.0",
+    "@headlessui/vue": "^1.7.23",
+    "@iarna/toml": "^2.2.5",
+    "@nanostores/vue": "^0.11.0",
+    "@tailwindcss/vite": "^4.0.14",
+    "@types/node": "^22.7.4",
+    "astro": "^5.5.2",
+    "astro-color-scheme": "^1.1.5",
+    "astro-sheet-loader": "^1.0.5",
+    "dotenv": "^16.4.7",
+    "google-auth-library": "^9.15.1",
+    "google-spreadsheet": "^4.1.4",
+    "googleapis": "^146.0.0",
+    "nanostores": "^0.11.3",
+    "sharp": "^0.33.5",
+    "tailwindcss": "^4.0.14",
+    "typescript": "^5.6.2",
+    "vue": "^3.5.11",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@iconify-json/tabler": "^1.2.5",
+    "@tailwindcss/typography": "^0.5.15",
+    "astro-icon": "^1.1.1",
+    "vite-plugin-toml": "^0.7.0"
+  }
+}

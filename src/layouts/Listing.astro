@@ -1,0 +1,36 @@
+---
+import "@fontsource/gabarito";
+import BaseLayout from "./BaseLayout.astro";
+import AppProse from "../components/app/Prose.astro";
+const { frontmatter } = Astro.props;
+import themeConfig from "@util/themeConfig";
+import { Icon } from "astro-icon/components";
+const siteTitle = themeConfig.general.title;
+const title = frontmatter?.title || siteTitle;
+const link = frontmatter?.link;
+const description = frontmatter?.description;
+const linkText = link?.replace(/^https?:\/\//, "");
+---
+
+<BaseLayout>
+  <div class="max-w-2xl w-full mx-auto py-20">
+    <div class="mb-10">
+      <div class="flex justify-between items-center">
+        <h1 class="font-bold text-4xl">{title}</h1>
+        {
+          link && (
+            <a class="inline-flex items-center gap-1 font-medium" href={link}>
+              {linkText}
+              <Icon name="tabler:arrow-up-right" />
+            </a>
+          )
+        }
+      </div>
+      <p class="text-gray-400 mt-2.5">{description}</p>
+    </div>
+
+    <AppProse>
+      <slot />
+    </AppProse>
+  </div>
+</BaseLayout>

@@ -1,0 +1,17 @@
+---
+import { ThemeSwitch } from "astro-color-scheme";
+import { Icon } from "astro-icon/components";
+import themeConfig from "@util/themeConfig";
+
+const config = themeConfig.ui.icons;
+---
+
+<ThemeSwitch strategy="button" defaultTheme="system">
+  <button
+    class="flex justify-center items-center border border-gray-200 rounded-full w-8 h-8 text-gray-500 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-800 dark:border-gray-500 transition-all"
+  >
+    <span class="sr-only">Toggle Theme</span>
+    <Icon class="hidden dark:block" name={config?.dark ?? "tabler:moon"} />
+    <Icon class="dark:hidden" name={config?.light ?? "tabler:sun"} />
+  </button>
+</ThemeSwitch>

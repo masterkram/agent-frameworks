@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import { render } from "astro:content";
+import Article from "@layouts/Article.astro";
+
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+
+export async function getStaticPaths() {
+  const allListings = await getCollection("blog");
+
+  return allListings.map((entry) => {
+    let mySlug: string = entry.id;
+    return {
+      params: { slug: mySlug },
+      props: { entry },
+    };
+  });
+}
+---
+
+<Article>
+  <Content />
+</Article>

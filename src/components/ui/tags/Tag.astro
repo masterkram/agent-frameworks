@@ -1,0 +1,15 @@
+---
+import type Tag from "../../../types/Tag";
+import themeConfig from "@util/themeConfig";
+const config = themeConfig.directory.tags;
+
+const { tag } = Astro.props;
+
+const configTag = config?.find((element: any) => element.key === tag);
+
+const tagClass = configTag?.color ? `${configTag.color}-tag` : "gray-tag";
+---
+
+<span class:list={["tag", tagClass]}>
+  {configTag?.name || tag}
+</span>

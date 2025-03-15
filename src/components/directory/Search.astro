@@ -1,0 +1,96 @@
+---
+import { Icon } from "astro-icon/components";
+import { getCollection } from "astro:content";
+import formatString from "../../util/formatString";
+import UiTagGrid from "../ui/tags/Grid.vue";
+import UiTagSelect from "../ui/tags/Select.vue";
+import config from "@util/themeConfig";
+
+const searchPlaceholder = await getSearchPlaceholder();
+
+async function getSearchPlaceholder() {
+  if (
+    config.directory.search?.placeholder &&
+    config.directory.search.placeholder.includes("{0}")
+  ) {
+    const count = (await getCollection("directory")).length;
+    return formatString(
+      config.directory.search?.placeholder ?? "Search among {0} listings",
+      count,
+    );
+  }
+
+  return config.directory.search?.placeholder ?? "Search";
+}
+---
+
+<div class="mb-10 not-prose">
+  <div class="mt-2 flex rounded-md shadow-sm">
+    <div class="relative flex flex-grow items-stretch focus-within:z-10">
+      {
+        config.directory.search.icon ? (
+          <div class="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
+            <Icon
+              name={config.directory.search.icon}
+              class="h-5 w-5 text-gray-400"
+              aria-hidden="true"
+            />
+          </div>
+        ) : (
+          ""
+        )
+      }
+      <input
+        id="search"
+        class=`block w-full rounded-md border-0 py-1.5 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary-600 sm:text-sm sm:leading-6 dark:active:ring-primary-400 dark:bg-gray-700 dark:ring-gray-600 dark:text-gray-200 dark:placeholder:text-gray-400 ${config.directory.search?.icon ? 'pl-10' : ''}`
+        placeholder={searchPlaceholder}
+      />
+      <div class="absolute inset-y-0 right-0 flex py-1.5 pr-1.5">
+        <kbd
+          class="inline-flex items-center rounded border border-gray-200 px-1 font-sans text-xs text-gray-400 dark:border-gray-500 dark:text-gray-500"
+          >⌘K</kbd
+        >
+      </div>
+    </div>
+  </div>
+  {
+    () => {
+      if (config.directory.search.tags.display === "select") {
+        return (
+          <UiTagSelect client:load>
+            <Icon name="tabler:x" />
+          </UiTagSelect>
+        );
+      }
+      if (config.directory.search.tags.display === "show-all") {
+        return <UiTagGrid client:load />;
+      }
+    }
+  }
+</div>
+
+<script>
+  import { search } from "../../store.js";
+
+  const searchInput = document.getElementById("search");
+
+  // Add an event listener to the button
+  searchInput?.addEventListener("input", (event: Event) => {
+    const target = event.target as HTMLSelectElement;
+    search.set(target.value);
+  });
+
+  const keyListener = function (e: KeyboardEvent) {
+    if (e.key === "k" && (e.ctrlKey || e.metaKey)) {
+      e.preventDefault();
+      searchInput?.focus();
+    }
+
+    if (e.key === "Escape") {
+      e.preventDefault();
+      searchInput?.blur();
+    }
+  };
+
+  document.body.addEventListener("keydown", keyListener);
+</script>
