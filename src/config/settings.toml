@@ -74,6 +74,11 @@ name = "Graph ⚙️"
 color = "green"
 
 [[directory.tags]]
+key = "computer"
+name = "Computer Use"
+color = "green"
+
+[[directory.tags]]
 key = "nocode"
 name = "No Code"
 color = "green"

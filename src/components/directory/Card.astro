@@ -22,8 +22,8 @@ const type = cardConfig.directory.grid.type;
   class="border listing col-span-1 border-gray-200 dark:border-gray-500 hover:border-primary-400 hover:border-solid dark:hover:border-primary-300 rounded relative group transition-all duration-300"
   class={ type === 'shadow' ? 'shadow-sm' : type === 'dashed' ? 'border-dashed' : ''}>
   { myItem.featured ? <DirectoryFeaturedTag class="ml-6"  /> : <></> }
-  { myItem.card_image ? <Image class="w-full h-48 rounded-t object-cover"
-    src={myItem.card_image} alt="bot"/> :  <div
+  { myItem.image ? <Image class="w-full h-48 rounded-t object-cover"
+    src={myItem.image} alt="bot"/> :  <div
     class="w-full h-48 px-2 text-center flex justify-center items-center rounded-t font-bold text-2xl bg-gray-200 dark:bg-gray-600">
     {myItem.title }
   </div> }
