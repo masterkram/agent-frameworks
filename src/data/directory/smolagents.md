@@ -4,6 +4,8 @@ description: Creates agents that run python code to acomplish tasks
 tags:
   - code
   - agnostic
+  - py
+  - tool
 link: https://github.com/huggingface/smolagents
 image: ../images/smolagents.png
 featured: true

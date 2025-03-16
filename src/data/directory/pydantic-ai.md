@@ -4,5 +4,6 @@ description: model agnostic library based on the popular pydantic library for ty
 link: https://ai.pydantic.dev/
 image: ../images/pydantic.png
 tags:
+  - py
   - graph
 ---

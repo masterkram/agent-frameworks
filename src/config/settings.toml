@@ -103,6 +103,16 @@ key = "memory"
 name = "Memory 🧠"
 color = "green"
 
+[[directory.tags]]
+key = "js"
+name = "javascript"
+color = "indigo"
+
+[[directory.tags]]
+key = "py"
+name = "python 🐍"
+color = "yellow"
+
 [header.banner]
 show = true
 text = "Brought to your by Mark."
