@@ -15,12 +15,12 @@ const linkText = link?.replace(/^https?:\/\//, "");
 <BaseLayout>
   <div class="max-w-2xl w-full mx-auto py-20">
     <div class="mb-10">
-      <div class="flex justify-between items-center">
+      <div class="flex flex-wrap gap-4 justify-between items-center">
         <h1 class="font-bold text-4xl">{title}</h1>
         {
           link && (
             <a
-              class="inline-flex items-center gap-1 font-medium max-w-sm"
+              class="inline-flex font-mono text-gray-600 dark:text-white bg-gray-200 dark:bg-gray-800 px-2 py-1 rounded-md items-center gap-1 font-medium max-w-sm"
               href={link}
               target="_blank"
             >

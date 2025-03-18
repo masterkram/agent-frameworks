@@ -10,6 +10,11 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
   site: "https://bestmeditationapps.com",
+  markdown: {
+    shikiConfig: {
+      theme: 'min-dark',
+    }
+  },
   integrations: [
     vue(),
     mdx(),

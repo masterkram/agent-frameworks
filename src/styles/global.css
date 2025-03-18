@@ -62,16 +62,10 @@
   @apply bg-yellow-50 text-yellow-800 ring-yellow-600/20 dark:bg-yellow-400/10 dark:text-yellow-500 dark:ring-yellow-400/20
 }
 
-
-
 .highlight span {
   @apply bg-gray-800 text-white px-1 -rotate-6;
 }
 
 .dashedcue span {
   @apply underline underline-offset-4 decoration-primary-600 decoration-dashed;
-}
-
-.astro-code {
-  background-color: var(--color-gray-900) !important;
 }

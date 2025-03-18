@@ -2,12 +2,29 @@
 title: Open AI SDK
 description: New agent sdk from open ai including tools such as computer use, function calling, file search, web search
 link: https://platform.openai.com/docs/guides/agents
+image: ../images/ai.png
 tags:
    - py
    - computer
    - tool
 ---
 
+```sh
+pip install openai-agents
+```
+
+```py
+from agents import Agent, Runner
+
+agent = Agent(name="Assistant", instructions="You are a helpful assistant")
+
+result = Runner.run_sync(agent, "Write a haiku about recursion in programming.")
+print(result.final_output)
+
+# Code within the code,
+# Functions calling themselves,
+# Infinite loop's dance.
+```
 
 ## Overview
 OpenAI Agent SDK is a lightweight yet powerful framework designed for building multi-agent workflows. The framework enables developers to create, coordinate, and monitor AI agents with a focus on simplicity and control. It's compatible with any model providers that support the OpenAI Chat Completions API format.

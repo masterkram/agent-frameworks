@@ -1,23 +1,29 @@
 ---
 import { getListings } from "../../lib/getListings";
 import PureGrid from "./PureGrid.astro";
+import themeConfig from "@util/themeConfig";
 
 const allListings = (await getListings()).sort(
   (a, b) => Number(b.data.featured) - Number(a.data.featured),
 );
 ---
 
-<PureGrid id="directory-grid" listings={allListings} />
+<PureGrid
+  id="directory-grid"
+  data-tag-intersection={themeConfig.directory.search.tags.intersection}
+  listings={allListings}
+/>
 
 <script>
   import { search, tags } from "../../store.js";
-
+  const gridElement = document.getElementById("directory-grid");
   // Define the filtering function
   function filterListings() {
     const listingsArray = document.querySelectorAll(".listing");
     const currentSearch = search.get().trim().toLowerCase();
     const selectedTags = tags.get();
-    const selectedTagsSet: Set<string> = new Set(selectedTags); // For efficient lookup
+    const selectedTagsSet: Set<string> = new Set(selectedTags); // For
+    const useIntersection = gridElement?.dataset.tagIntersection === "true";
 
     for (const element of listingsArray) {
       // Get content for search filtering
@@ -31,10 +37,22 @@ const allListings = (await getListings()).sort(
         const elementTags = element.dataset.tags?.split(",") || [];
 
         // Determine if the listing matches
-        const matchesSearch = content.includes(currentSearch); // Empty search matches all
-        const matchesTags =
-          selectedTags.length === 0 ||
-          elementTags.some((tag: string) => selectedTagsSet.has(tag.trim()));
+        const matchesSearch = content.includes(currentSearch);
+
+        let matchesTags = selectedTags.length === 0;
+        if (selectedTags.length > 0) {
+          if (useIntersection) {
+            // AND logic - must match all selected tags
+            matchesTags = selectedTags.every((tag) =>
+              elementTags.some((elementTag) => elementTag.trim() === tag),
+            );
+          } else {
+            // OR logic - must match at least one selected tag
+            matchesTags = elementTags.some((tag) =>
+              selectedTagsSet.has(tag.trim()),
+            );
+          }
+        }
 
         // Show or hide the listing
         if (matchesSearch && matchesTags) {

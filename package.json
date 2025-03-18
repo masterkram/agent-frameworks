@@ -24,7 +24,6 @@
     "@iarna/toml": "^2.2.5",
     "@nanostores/vue": "^0.11.0",
     "@tailwindcss/vite": "^4.0.14",
-    "@types/node": "^22.7.4",
     "astro": "^5.5.2",
     "astro-color-scheme": "^1.1.5",
     "astro-sheet-loader": "^1.0.5",
@@ -43,6 +42,7 @@
     "@iconify-json/emojione-v1": "^1.2.1",
     "@iconify-json/tabler": "^1.2.5",
     "@tailwindcss/typography": "^0.5.15",
+    "@types/node": "^22.7.4",
     "astro-icon": "^1.1.1",
     "vite-plugin-toml": "^0.7.0"
   }
