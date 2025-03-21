@@ -14,15 +14,7 @@ featured: true
 
 
 ## Weather Agent Example
-```py
-from smolagents import tool
 
-@tool
-def sql_engine(query: str) -> str:
-    output = ""
-    with engine.connect() as con:
-        rows = con.execute(text(query))
-        for row in rows:
-            output += "\n" + str(row)
-    return output
+```py
+class 
 ```

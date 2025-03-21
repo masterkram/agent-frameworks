@@ -25,7 +25,7 @@ function toggleTagByName(tag: string) {
   <div class="flex flex-wrap gap-2 mt-4">
     <span
       v-for="tag in availableTags"
-      class="border border-gray-200 rounded-md px-2 py-1 hover:bg-gray-50 dark:hover:bg-gray-900 dark:border-gray-600 cursor-pointer select-none"
+      class="border border-gray-200 rounded-md px-2 py-1 hover:bg-gray-50 dark:hover:bg-gray-900 dark:border-gray-800 cursor-pointer select-none"
       :class="selectedTags.includes(tag.key) ? 'border-primary-500 dark:border-primary-300' : ''"
       @click="toggleTagByName(tag.key)"
     >
