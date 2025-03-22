@@ -129,7 +129,7 @@ target = "_blank"
 
 [header.actionButton]
 text = "Submit a framework"
-href = "https://github.com/masterkram/agent-frameworks/pulls"
+href = "https://github.com/masterkram/agent-frameworks/issues/new?template=ADD_FRAMEWORK.yml"
 
 [footer]
 description = "Best directory for my niche."
