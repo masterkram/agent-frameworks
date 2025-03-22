@@ -6,11 +6,11 @@ iconLogo = "emojione-v1:alien-monster"
 [general.seo]
 name = "Agent Frameworks"
 description = "Find the best and newest AI agent frameworks."
-url = "https://nuxtstarters.com"
+url = "https://codeagents.dev"
 
 [directory.data]
 source = "default" # default, mock, sheets
-links = "normal"
+links = "outbound"
 
 # [directory.data.sheets]
 # key = "1BKVVFysQT8ZuPY8hUp--jwTrN-U20TrtML0idECIWmc"
@@ -18,7 +18,7 @@ links = "normal"
 [directory.search]
 placeholder = "Search among {0} agent frameworks"
 showCount = true
-icon = "tabler:bow"
+icon = "tabler:search"
 
 [directory.search.tags]
 display = "show-all" # options: none,select,show-all
@@ -51,7 +51,7 @@ icon = "tabler:star"
 labelForCard = "Featured ✨"
 
 [directory.tagPages]
-title = "{0} Frameworks"
+title = "{0} AI Agent Frameworks"
 
 [[directory.tags]]
 key = "code"
@@ -124,11 +124,11 @@ colorModeSelector = true
 
 [[header.navbar.links]]
 name = "Analytics"
-href = "https://us.posthog.com/shared/vHlGCcSqPjGH4r_QijaXSETtmN9J-g"
+href = "https://us.posthog.com/shared/nNLUoHrjj9l-xQS2RAiKg7KhYgX88w"
 target = "_blank"
 
 [header.actionButton]
-text = "Submit a starter"
+text = "Submit a framework"
 href = "https://github.com/masterkram/agent-frameworks/pulls"
 
 [footer]

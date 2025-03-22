@@ -1,0 +1,13 @@
+name: "💡 Add a framework"
+description: Create a new ticket for a new framework
+title: "💡 Add [FRAMEWORK]"
+labels: ["content"]
+body:
+  - type: input
+    id: link
+    attributes:
+      label: "Link to framework"
+      description: Link to the framework
+      placeholder: "https://example.com"
+    validations:
+      required: false

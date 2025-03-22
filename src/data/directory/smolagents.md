@@ -7,10 +7,17 @@ tags:
   - py
   - tool
   - collaboration
+  - mcp
 link: https://github.com/huggingface/smolagents
 image: ../images/smolagents.png
 featured: true
 ---
+
+## How to install
+
+```sh
+pip install smolagents
+```
 
 
 ## Weather Agent Example
