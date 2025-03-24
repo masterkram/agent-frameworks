@@ -41,6 +41,9 @@ const type = cardConfig.directory.grid.type;
         (e: string) => <UiTag tag={e} /> )
       }
     </div>
+    <div class="mt-2 font-medium text-sm">
+      {myItem.formattedStars} stars
+    </div>
   </div>
 </a> :
 <a href={`/${myItem.slug}`} class="listing">

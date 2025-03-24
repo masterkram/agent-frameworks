@@ -1,5 +1,6 @@
 ---
 link: 'https://github.com/agno-agi/agno'
+github: 'https://github.com/agno-agi/agno'
 image: ../images/agno.png
 title: Agno
 tags:

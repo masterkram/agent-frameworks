@@ -28,6 +28,7 @@ export default defineConfig({
     schema: {
       POSTHOG_API_KEY: envField.string({ context: "client", access: "public", optional: true }),
       POSTHOG_API_HOST: envField.string({ context: "client", access: "public", optional: true }),
+      GITHUB_TOKEN: envField.string({ context: "server", access: "secret", optional: true }),
     }
   }
 });

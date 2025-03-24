@@ -9,6 +9,7 @@ tags:
   - collaboration
   - mcp
 link: https://github.com/huggingface/smolagents
+github: https://github.com/huggingface/smolagents
 image: ../images/smolagents.png
 featured: true
 ---

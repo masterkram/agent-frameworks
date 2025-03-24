@@ -2,10 +2,66 @@
 import { getListings } from "../../lib/getListings";
 import PureGrid from "./PureGrid.astro";
 import themeConfig from "@util/themeConfig";
+import { GITHUB_TOKEN } from "astro:env/server";
 
-const allListings = (await getListings()).sort(
-  (a, b) => Number(b.data.featured) - Number(a.data.featured),
-);
+// Function to format numbers (e.g., 15590 -> 15.5k)
+function formatNumber(num: number) {
+  if (num >= 1000000) {
+    return (num / 1000000).toFixed(1).replace(".0", "") + "m";
+  }
+  if (num >= 1000) {
+    return (num / 1000).toFixed(1).replace(".0", "") + "k";
+  }
+  return num.toString();
+}
+
+// Function to extract owner and repo name from GitHub URL
+function extractRepoInfo(url: string) {
+  const match = url.match(/github\.com\/([^/]+)\/([^/]+)/);
+  if (!match) return null;
+  return { owner: match[1], repo: match[2] };
+}
+
+async function addGithubStars(element: any) {
+  try {
+    // Check if there's a github url in the element data
+    if (!element.data?.github) return { ...element };
+
+    const repoInfo = extractRepoInfo(element.data.github);
+    if (!repoInfo) return { ...element };
+
+    // Fetch stars from GitHub API
+    const response = await fetch(
+      `https://api.github.com/repos/${repoInfo.owner}/${repoInfo.repo}`,
+      {
+        headers: {
+          // Optional: Add GitHub token if you have one for higher rate limits
+          Authorization: `token ${GITHUB_TOKEN}`,
+          Accept: "application/vnd.github.v3+json",
+        },
+      },
+    );
+
+    if (!response.ok) {
+      console.log(response);
+      console.error(`Failed to fetch stars for ${element.data.github}`);
+      return { ...element };
+    }
+
+    const data = await response.json();
+    const stars = data.stargazers_count || 0;
+    const formattedStars = formatNumber(stars);
+
+    return { ...element, data: { ...element.data, stars, formattedStars } };
+  } catch (error) {
+    console.error(`Error fetching stars for ${element.data?.github}:`, error);
+    return { ...element };
+  }
+}
+
+const allListings = (
+  await Promise.all((await getListings()).map(addGithubStars))
+).sort((a, b) => Number(b.data.featured) - Number(a.data.featured));
 ---
 
 <PureGrid

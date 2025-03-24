@@ -22,7 +22,7 @@ icon = "tabler:search"
 
 [directory.search.tags]
 display = "show-all" # options: none,select,show-all
-intersection = false
+intersection = true
 
 [directory.grid]
 list = false

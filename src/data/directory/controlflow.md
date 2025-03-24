@@ -2,6 +2,7 @@
 title: Control Flow
 description: ControlFlow provides a structured, developer-focused framework for defining workflows and delegating work to LLMs, without sacrificing control or transparency
 link: https://controlflow.ai/welcome
+github: https://github.com/PrefectHQ/ControlFlow
 tags:
   - collaboration
   - py

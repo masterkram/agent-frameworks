@@ -12,7 +12,8 @@ const directorySchema = (image: any) =>
     icon: z.string().optional(),
     link: z.string().url().optional(),
     featured: z.boolean().default(false),
-    image: image().optional()
+    image: image().optional(),
+    github: z.string().url().optional()
   });
 
 let directory;

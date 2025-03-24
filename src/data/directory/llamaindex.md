@@ -3,6 +3,7 @@ title: LlamaIndex Agents
 description: LlamaIndex is a simple, flexible framework for building agentic generative AI applications that allow large language models to work with your data in any format.
 image: ../images/llama.png
 link: https://www.llamaindex.ai/framework
+github: https://github.com/run-llama/llama_index
 tags:
   - py
   - js

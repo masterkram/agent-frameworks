@@ -2,6 +2,7 @@
 title: Open AI SDK
 description: New agent sdk from open ai including tools such as computer use, function calling, file search, web search
 link: https://platform.openai.com/docs/guides/agents
+github: https://github.com/openai/openai-agents-python
 image: ../images/ai.png
 tags:
    - py

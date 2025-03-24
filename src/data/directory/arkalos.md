@@ -1,6 +1,6 @@
 ---
 link: 'https://arkalos.com/'
-
+github: https://github.com/arkaloscom/arkalos/
 title: Arkalos
 tags:
   - py

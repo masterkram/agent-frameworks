@@ -2,6 +2,7 @@
 title: Praison
 description: PraisonAI is a production-ready Multi-AI Agents framework with self-reflection, designed to create AI Agents to automate and solve problems ranging from simple tasks to complex challenges. By integrating PraisonAI Agents, AutoGen, and CrewAI into a low-code solution, it streamlines the building and management of multi-agent LLM systems, emphasising simplicity, customisation, and effective human-agent collaboration.
 link: https://docs.praison.ai/
+github: https://github.com/MervinPraison/PraisonAI
 tags:
   - agnostic
   - tools
