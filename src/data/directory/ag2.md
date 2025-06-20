@@ -16,7 +16,6 @@ tags:
 pip install "ag2[openai]"
 ```
 
-
 ## Example
 
 ```py

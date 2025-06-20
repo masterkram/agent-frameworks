@@ -10,7 +10,7 @@ url = "https://codeagents.dev"
 
 [directory.data]
 source = "default" # default, mock, sheets
-links = "outbound"
+links = "default"
 
 # [directory.data.sheets]
 # key = "1BKVVFysQT8ZuPY8hUp--jwTrN-U20TrtML0idECIWmc"
@@ -105,7 +105,7 @@ color = "green"
 
 [[directory.tags]]
 key = "js"
-name = "javascript"
+name = "typescript"
 color = "indigo"
 
 [[directory.tags]]

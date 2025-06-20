@@ -3,6 +3,7 @@ link: 'https://github.com/agno-agi/agno'
 github: 'https://github.com/agno-agi/agno'
 image: ../images/agno.png
 title: Agno
+sponsored: true
 tags:
   - py
   - agnostic
@@ -29,5 +30,5 @@ agent.print_response("What is the weather in Amsterdam?", stream=True)
 ```
 
 
-## Included Tools
+## Deep Research Example
 

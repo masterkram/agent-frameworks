@@ -1,7 +1,6 @@
 ---
 title: Camel AI
 description: Agents in CAMEL are autonomous entities capable of performing specific tasks through interaction with language models and other components. Each agent is designed with a particular role and capability, allowing them to work independently or collaboratively to achieve complex goals.
-image: ../images/camelai.png
 link: https://www.camel-ai.org/
 github: https://github.com/camel-ai/camel
 tags:

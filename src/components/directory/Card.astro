@@ -21,14 +21,20 @@ const type = cardConfig.directory.grid.type;
   transition:name={`card-${myItem.id}`}
   data-tags={myItem.tags?.join(',') || ''}
   target={cardConfig.directory?.data?.links === 'outbound' ? '_blank' : ''}
-  class="border listing col-span-1 border-gray-200 dark:border-gray-700 hover:border-gray-300 hover:border-solid dark:hover:border-gray-600 rounded relative group transition-all duration-300"
+  class="border listing col-span-1 border-gray-200 dark:border-gray-800 hover:border-gray-300 hover:border-solid dark:hover:border-gray-700 rounded relative group transition-all duration-300"
   class={ type === 'shadow' ? 'shadow-sm' : type === 'dashed' ? 'border-dashed' : ''}>
   { myItem.featured ? <DirectoryFeaturedTag class="ml-6"  /> : <></> }
+
+  <div class="relative border-b border-gray-200 dark:border-gray-800 w-full h-48 rounded-t">
   { myItem.image ? <Image class="w-full h-48 rounded-t object-cover"
-    src={myItem.image} alt="bot"/> :  <div
-    class="w-full h-48 px-2 text-center flex justify-center items-center rounded-t font-bold text-2xl bg-gray-200 dark:bg-gray-600">
-    {myItem.title }
-  </div> }
+    src={myItem.image} alt="bot"/> : <div class="absolute inset-0 h-full w-full flex items-center justify-center bg-gray-50 bg-[linear-gradient(to_right,#f0f0f0_1px,transparent_1px),linear-gradient(to_bottom,#f0f0f0_1px,transparent_1px)] bg-[size:40px_40px] dark:bg-gray-900 dark:bg-[linear-gradient(to_right,#27272A_1px,transparent_1px),linear-gradient(to_bottom,#27272A_1px,transparent_1px)]">
+        <span class="text-gray-500 dark:text-gray-400 font-bold text-2xl">
+          { myItem.title }
+        </span>
+      </div>
+      }
+  </div>
+
   <div class="p-6">
     <h3 class="m-0 text-lg font-semibold dark:text-gray-50 card-title">
       { myItem?.title }
@@ -41,7 +47,7 @@ const type = cardConfig.directory.grid.type;
         (e: string) => <UiTag tag={e} /> )
       }
     </div>
-    <div class="mt-2 font-medium text-sm">
+    <div class="mt-2 font-medium text-sm text-gray-500 dark:text-gray-500">
       {myItem.formattedStars} stars
     </div>
   </div>
