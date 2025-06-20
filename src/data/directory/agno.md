@@ -3,7 +3,7 @@ link: 'https://github.com/agno-agi/agno'
 github: 'https://github.com/agno-agi/agno'
 image: ../images/agno.png
 title: Agno
-sponsored: true
+featured: true
 tags:
   - py
   - agnostic
